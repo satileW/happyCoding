@@ -5,10 +5,15 @@ check every vertex with 0 indegree, remove its edge from matrix and indegree of 
 After remove some edges, indegree of some vertex become 0. Then visit these new vertexs with 0 indegree. The visiting order of vertexes is the topo order we want
 
 pseudo code:
+
         L ← Empty list that will contain the sorted elements
+
         S ← Set of all nodes with no incoming edge
+
         while S is non-empty do
+
             remove a node n from S
+            
             add n to tail of L
             for each node m with an edge e from n to m do
                 remove edge e from the graph
@@ -24,14 +29,24 @@ pseudo code:
 compare to kahn algorithm, dfs is more simple but requires provement process
 
 L ← Empty list that will contain the sorted nodes
+
 S ← Set of all nodes with no outgoing edges
+
 for each node n in S do
+
     visit(n) 
+
 function visit(node n)
+
     if n has not been visited yet then
+
         mark n as visited
+
         for each node m with an edgefrom m to ndo
+
             visit(m)
+
         add n to L ///this is key step of recursion
+
 
 
