@@ -22,11 +22,11 @@ Iterate the array:
 While stack is not empty and height[current] > height[st.top()]:
     It means that the stack element can be popped. Pop the top element as top.
 
-    Find the distance between the current element and the element at top of stack, which is to be filled. \text{distance} = \text{current} - \text{st.top}() - 1distance=current−st.top()−1
+    Find the distance between the current element and the element at top of stack, which is to be filled. distance = current - st.top() - 1 
 
-    Find the bounded height bounded_height=min(height[current],height[st.top()])−height[top]bounded_height=min(height[current],height[st.top()])−height[top]
+    Find the bounded height bounded_height=min(height[current],height[st.top()])−height[top]
 
-    Add resulting trapped water to answer ans+=distance∗bounded_heightans+=distance∗bounded_height
+    Add resulting trapped water to answer ans+=distance∗bounded_height
 
 Push current index to top of the stack
 
