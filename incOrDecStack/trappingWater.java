@@ -21,4 +21,23 @@ class Solution {
         }
         return trap;
     }
+
+     public int trapWithStack(int[] height) {
+        Stack<Integer> stack = new Stack<Integer>();
+        int current = 0;
+        int trapping = 0;
+        while(current < height.length){
+            while(!stack.isEmpty() && height[current] > height[stack.peek()]){
+                int top = stack.pop();
+                if(stack.isEmpty()){
+                    break;
+                }
+                int bound = current - stack.peek() - 1;
+                int compensation = Math.min(height[current], height[stack.peek()]) - height[top];
+                trapping += bound * compensation;
+            }
+            stack.push(current ++);
+        }
+        return trapping;
+    }
 }
